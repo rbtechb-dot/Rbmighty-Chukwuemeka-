@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard | Rbmighty</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Poppins', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            dark: '#0f172a',
+                            purple: '#8b5cf6',
+                            pink: '#ec4899',
+                            card: '#1e293b'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-brand-dark text-slate-200 min-h-screen flex font-sans overflow-hidden">
+
+    <!-- Sidebar -->
+    <aside class="w-64 bg-brand-card border-r border-slate-800 hidden md:flex flex-col">
+        <div class="p-6 border-b border-slate-800">
+            <div class="text-xl font-bold tracking-tight text-white">
+                Admin<span class="text-brand-purple">.</span>
+            </div>
+        </div>
+        <nav class="flex-grow p-4 space-y-2">
+            <a href="admin.html" class="flex items-center gap-3 px-4 py-3 bg-brand-purple/10 text-brand-purple rounded-lg font-medium">
+                <i class="fa-solid fa-chart-pie w-5"></i>
+                Dashboard
+            </a>
+            <a href="admin-creators.html" class="flex items-center gap-3 px-4 py-3 text-slate-400 hover:text-white hover:bg-slate-800 rounded-lg transition">
+                <i class="fa-solid fa-users w-5"></i>
+                Network
+            </a>
+            <a href="admin-settings.html" class="flex items-center gap-3 px-4 py-3 text-slate-400 hover:text-white hover:bg-slate-800 rounded-lg transition">
+                <i class="fa-solid fa-gear w-5"></i>
+                Settings
+            </a>
+        </nav>
+        <div class="p-4 border-t border-slate-800">
+            <a href="index.html" class="flex items-center gap-3 px-4 py-3 text-slate-400 hover:text-red-400 transition">
+                <i class="fa-solid fa-right-from-bracket w-5"></i>
+                Exit Admin
+            </a>
+        </div>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="flex-grow flex flex-col h-screen overflow-y-auto">
+        
+        <header class="h-16 border-b border-slate-800 flex items-center justify-between px-6 bg-brand-dark/50 backdrop-blur sticky top-0 z-20">
+            <div class="flex items-center gap-4">
+                <button class="md:hidden text-slate-400 hover:text-white">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+                <h2 class="text-lg font-semibold text-white">Overview</h2>
+            </div>
+            <div class="flex items-center gap-4">
+                <div class="w-8 h-8 rounded-full bg-brand-purple flex items-center justify-center text-white text-xs font-bold">
+                    A
+                </div>
+            </div>
+        </header>
+
+        <div class="p-6 md:p-8">
+            <!-- Stats Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+                <div class="bg-brand-card p-6 rounded-xl border border-slate-800">
+                    <div class="flex justify-between items-center mb-4">
+                        <h3 class="text-slate-400 text-sm">Total Members</h3>
+                        <i class="fa-solid fa-users text-brand-purple"></i>
+                    </div>
+                    <p class="text-3xl font-bold text-white" id="total-creators-count">0</p>
+                </div>
+                <div class="bg-brand-card p-6 rounded-xl border border-slate-800">
+                    <div class="flex justify-between items-center mb-4">
+                        <h3 class="text-slate-400 text-sm">Project Inquiries</h3>
+                        <i class="fa-solid fa-briefcase text-brand-pink"></i>
+                    </div>
+                    <p class="text-3xl font-bold text-white">12</p>
+                </div>
+                <div class="bg-brand-card p-6 rounded-xl border border-slate-800">
+                    <div class="flex justify-between items-center mb-4">
+                        <h3 class="text-slate-400 text-sm">New Requests</h3>
+                        <i class="fa-solid fa-bell text-blue-400"></i>
+                    </div>
+                    <p class="text-3xl font-bold text-white">5</p>
+                </div>
+            </div>
+
+            <!-- Recent Activity -->
+            <div class="bg-brand-card rounded-xl border border-slate-800 overflow-hidden">
+                <div class="p-6 border-b border-slate-800">
+                    <h3 class="font-semibold text-white">Recent System Activity</h3>
+                </div>
+                <div class="p-6">
+                    <ul class="space-y-4">
+                        <li class="flex items-center gap-4">
+                            <div class="w-2 h-2 rounded-full bg-green-500"></div>
+                            <p class="text-slate-400 text-sm"><span class="text-white font-medium">System</span> verified 3 new user profiles.</p>
+                            <span class="text-xs text-slate-600 ml-auto">2m ago</span>
+                        </li>
+                        <li class="flex items-center gap-4">
+                            <div class="w-2 h-2 rounded-full bg-blue-500"></div>
+                            <p class="text-slate-400 text-sm">Database backup completed.</p>
+                            <span class="text-xs text-slate-600 ml-auto">1h ago</span>
+                        </li>
+                        <li class="flex items-center gap-4">
+                            <div class="w-2 h-2 rounded-full bg-brand-purple"></div>
+                            <p class="text-slate-400 text-sm">Configuration updated.</p>
+                            <span class="text-xs text-slate-600 ml-auto">3h ago</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>

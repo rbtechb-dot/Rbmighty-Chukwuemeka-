@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Settings | Rbmighty</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Poppins', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            dark: '#0f172a',
+                            purple: '#8b5cf6',
+                            pink: '#ec4899',
+                            card: '#1e293b'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-brand-dark text-slate-200 min-h-screen flex font-sans overflow-hidden">
+
+    <!-- Sidebar -->
+    <aside class="w-64 bg-brand-card border-r border-slate-800 hidden md:flex flex-col">
+        <div class="p-6 border-b border-slate-800">
+            <div class="text-xl font-bold tracking-tight text-white">
+                Admin<span class="text-brand-purple">.</span>
+            </div>
+        </div>
+        <nav class="flex-grow p-4 space-y-2">
+            <a href="admin.html" class="flex items-center gap-3 px-4 py-3 text-slate-400 hover:text-white hover:bg-slate-800 rounded-lg transition">
+                <i class="fa-solid fa-chart-pie w-5"></i>
+                Dashboard
+            </a>
+            <a href="admin-creators.html" class="flex items-center gap-3 px-4 py-3 text-slate-400 hover:text-white hover:bg-slate-800 rounded-lg transition">
+                <i class="fa-solid fa-users w-5"></i>
+                Network
+            </a>
+            <a href="admin-settings.html" class="flex items-center gap-3 px-4 py-3 bg-brand-purple/10 text-brand-purple rounded-lg font-medium">
+                <i class="fa-solid fa-gear w-5"></i>
+                Settings
+            </a>
+        </nav>
+        <div class="p-4 border-t border-slate-800">
+            <a href="index.html" class="flex items-center gap-3 px-4 py-3 text-slate-400 hover:text-red-400 transition">
+                <i class="fa-solid fa-right-from-bracket w-5"></i>
+                Exit Admin
+            </a>
+        </div>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="flex-grow flex flex-col h-screen overflow-y-auto">
+        
+        <header class="h-16 border-b border-slate-800 flex items-center justify-between px-6 bg-brand-dark/50 backdrop-blur sticky top-0 z-20">
+            <div class="flex items-center gap-4">
+                <button class="md:hidden text-slate-400 hover:text-white">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+                <h2 class="text-lg font-semibold text-white">System Settings</h2>
+            </div>
+            <div class="flex items-center gap-4">
+                <div class="w-8 h-8 rounded-full bg-brand-purple flex items-center justify-center text-white text-xs font-bold">
+                    A
+                </div>
+            </div>
+        </header>
+
+        <div class="p-6 md:p-8 max-w-2xl">
+            <div class="bg-brand-card rounded-xl border border-slate-800 p-6 space-y-6">
+                
+                <div>
+                    <h3 class="text-lg font-bold text-white mb-1">General Settings</h3>
+                    <p class="text-sm text-slate-500">Configure basic site information.</p>
+                </div>
+
+                <div class="space-y-4">
+                    <div>
+                        <label class="block text-sm font-medium text-slate-400 mb-2">Site Name</label>
+                        <input type="text" class="w-full bg-brand-dark border border-slate-700 rounded-lg px-4 py-3 text-white" value="Rbmighty Portfolio">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-slate-400 mb-2">Contact Email</label>
+                        <input type="email" class="w-full bg-brand-dark border border-slate-700 rounded-lg px-4 py-3 text-white" value="contact@rbmighty.com">
+                    </div>
+                </div>
+
+                <hr class="border-slate-800">
+
+                <div>
+                    <h3 class="text-lg font-bold text-white mb-1">Notifications</h3>
+                    <p class="text-sm text-slate-500">Manage how you receive alerts.</p>
+                </div>
+
+                <div class="space-y-4">
+                    <label class="flex items-center gap-3 cursor-pointer">
+                        <input type="checkbox" checked class="w-5 h-5 rounded border-slate-700 bg-brand-dark text-brand-purple focus:ring-brand-purple">
+                        <span class="text-slate-300">Email me when new inquiries arrive</span>
+                    </label>
+                    <label class="flex items-center gap-3 cursor-pointer">
+                        <input type="checkbox" class="w-5 h-5 rounded border-slate-700 bg-brand-dark text-brand-purple focus:ring-brand-purple">
+                        <span class="text-slate-300">Enable system alerts</span>
+                    </label>
+                </div>
+
+                <div class="pt-4">
+                    <button class="bg-brand-purple hover:bg-purple-600 text-white font-bold py-2 px-6 rounded-lg transition">
+                        Save Changes
+                    </button>
+                </div>
+
+            </div>
+        </div>
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>

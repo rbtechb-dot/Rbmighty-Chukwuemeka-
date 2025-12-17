@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rbmighty | Software Engineer & Entrepreneur</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Poppins', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            dark: '#0f172a',
+                            purple: '#8b5cf6',
+                            pink: '#ec4899',
+                            card: '#1e293b'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .gradient-text {
+            background: linear-gradient(to right, #8b5cf6, #ec4899);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .social-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px -5px rgba(139, 92, 246, 0.3);
+        }
+    </style>
+</head>
+<body class="bg-brand-dark text-slate-200 min-h-screen flex flex-col font-sans">
+
+    <!-- Navbar -->
+    <nav class="w-full py-6 px-6 md:px-12 flex justify-between items-center backdrop-blur-md bg-brand-dark/80 fixed top-0 z-50 border-b border-slate-800">
+        <div class="text-2xl font-bold tracking-tight text-white">
+            Rbmighty<span class="text-brand-purple">.</span>
+        </div>
+        <div class="hidden lg:flex gap-6 text-sm font-medium">
+            <a href="index.html" class="text-white hover:text-brand-purple transition">Home</a>
+            <a href="about.html" class="text-slate-400 hover:text-brand-purple transition">About</a>
+            <a href="portfolio.html" class="text-slate-400 hover:text-brand-purple transition">Portfolio</a>
+            <a href="services.html" class="text-slate-400 hover:text-brand-purple transition">Services</a>
+            <a href="feed.html" class="text-slate-400 hover:text-brand-purple transition">Community</a>
+            <a href="blog.html" class="text-slate-400 hover:text-brand-purple transition">Blog</a>
+            <a href="contact.html" class="text-slate-400 hover:text-brand-purple transition">Contact</a>
+        </div>
+        <button class="lg:hidden text-2xl text-white" id="mobile-menu-btn">
+            <i class="fa-solid fa-bars"></i>
+        </button>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="hidden fixed inset-0 bg-brand-dark z-40 pt-24 px-6 space-y-6 text-center">
+        <a href="index.html" class="block text-xl text-white font-medium">Home</a>
+        <a href="about.html" class="block text-xl text-slate-400">About</a>
+        <a href="portfolio.html" class="block text-xl text-slate-400">Portfolio</a>
+        <a href="services.html" class="block text-xl text-slate-400">Services</a>
+        <a href="feed.html" class="block text-xl text-slate-400">Community</a>
+        <a href="blog.html" class="block text-xl text-slate-400">Blog</a>
+        <a href="contact.html" class="block text-xl text-slate-400">Contact</a>
+        <button id="close-menu-btn" class="absolute top-6 right-6 text-3xl text-white">
+            <i class="fa-solid fa-xmark"></i>
+        </button>
+    </div>
+
+    <!-- Hero Section -->
+    <main class="flex-grow flex flex-col items-center justify-center pt-32 pb-16 px-4">
+        <div class="text-center max-w-lg w-full">
+            <div class="relative w-32 h-32 mx-auto mb-6">
+                <div class="absolute inset-0 bg-gradient-to-r from-brand-purple to-brand-pink rounded-full blur animate-pulse"></div>
+                <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" 
+                     alt="Rbmighty Chukwuemeka" 
+                     class="relative w-full h-full object-cover rounded-full border-4 border-brand-dark">
+            </div>
+
+            <h1 class="text-3xl md:text-4xl font-bold text-white mb-2">Rbmighty Chukwuemeka</h1>
+            <p class="text-brand-purple font-medium mb-4">Entrepreneur & Software Engineer</p>
+            <p class="text-slate-400 text-sm mb-10 leading-relaxed px-4">
+                Building scalable software solutions, driving digital transformation, and empowering businesses through technology.
+            </p>
+
+            <div class="space-y-4 w-full">
+                <a href="#" class="social-card group flex items-center justify-between p-4 bg-brand-card rounded-xl border border-slate-700 transition duration-300">
+                    <div class="flex items-center gap-4">
+                        <div class="w-10 h-10 rounded-full bg-blue-600 flex items-center justify-center text-white">
+                            <i class="fa-brands fa-facebook-f text-xl"></i>
+                        </div>
+                        <span class="font-medium text-white group-hover:text-blue-400 transition">Facebook</span>
+                    </div>
+                    <span class="text-slate-500 text-sm group-hover:text-white transition">rbmighty Chukwuemeka</span>
+                </a>
+
+                <a href="#" class="social-card group flex items-center justify-between p-4 bg-brand-card rounded-xl border border-slate-700 transition duration-300">
+                    <div class="flex items-center gap-4">
+                        <div class="w-10 h-10 rounded-full bg-black border border-slate-600 flex items-center justify-center text-white">
+                            <i class="fa-brands fa-github text-xl"></i>
+                        </div>
+                        <span class="font-medium text-white group-hover:text-purple-400 transition">GitHub</span>
+                    </div>
+                    <span class="text-slate-500 text-sm group-hover:text-white transition">@rbmighty</span>
+                </a>
+            </div>
+
+            <div class="mt-10">
+                <a href="https://wa.me/2348146919543" target="_blank" 
+                   class="inline-flex items-center justify-center gap-2 w-full py-4 rounded-full bg-green-500 hover:bg-green-600 text-white font-bold text-lg shadow-lg shadow-green-500/20 transition-all transform hover:scale-[1.02]">
+                    <i class="fa-brands fa-whatsapp text-2xl"></i>
+                    Connect on WhatsApp
+                </a>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-brand-card/50 border-t border-slate-800 py-8 px-4 text-center">
+        <p class="text-slate-400 text-sm mb-4">
+            Looking for a tech partner or software solution?<br>
+            <span class="text-brand-purple font-medium">Let's build the future together.</span>
+        </p>
+        <div class="flex justify-center gap-4 text-xs text-slate-600 mb-2">
+            <a href="faq.html" class="hover:text-slate-400">FAQ</a>
+            <a href="login.html" class="hover:text-slate-400">Admin Login</a>
+        </div>
+        <div class="text-xs text-slate-600 select-none">
+            &copy; 2023 Rbmighty Chukwuemeka. All rights reserved.
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

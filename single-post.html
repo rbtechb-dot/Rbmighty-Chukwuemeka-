@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Post | Rbmighty</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Poppins', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            dark: '#0f172a',
+                            purple: '#8b5cf6',
+                            pink: '#ec4899',
+                            card: '#1e293b'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-brand-dark text-slate-200 min-h-screen flex flex-col font-sans">
+
+    <nav class="w-full py-6 px-6 md:px-12 flex justify-between items-center backdrop-blur-md bg-brand-dark/80 fixed top-0 z-50 border-b border-slate-800">
+        <div class="text-2xl font-bold tracking-tight text-white">
+            Rbmighty<span class="text-brand-purple">.</span>
+        </div>
+        <div class="hidden lg:flex gap-6 text-sm font-medium">
+            <a href="index.html" class="text-slate-400 hover:text-brand-purple transition">Home</a>
+            <a href="about.html" class="text-slate-400 hover:text-brand-purple transition">About</a>
+            <a href="portfolio.html" class="text-slate-400 hover:text-brand-purple transition">Portfolio</a>
+            <a href="services.html" class="text-slate-400 hover:text-brand-purple transition">Services</a>
+            <a href="feed.html" class="text-slate-400 hover:text-brand-purple transition">Community</a>
+            <a href="blog.html" class="text-white hover:text-brand-purple transition">Blog</a>
+            <a href="contact.html" class="text-slate-400 hover:text-brand-purple transition">Contact</a>
+        </div>
+        <button class="lg:hidden text-2xl text-white" id="mobile-menu-btn">
+            <i class="fa-solid fa-bars"></i>
+        </button>
+    </nav>
+
+    <div id="mobile-menu" class="hidden fixed inset-0 bg-brand-dark z-40 pt-24 px-6 space-y-6 text-center">
+        <a href="index.html" class="block text-xl text-slate-400">Home</a>
+        <a href="about.html" class="block text-xl text-slate-400">About</a>
+        <a href="portfolio.html" class="block text-xl text-slate-400">Portfolio</a>
+        <a href="services.html" class="block text-xl text-slate-400">Services</a>
+        <a href="feed.html" class="block text-xl text-slate-400">Community</a>
+        <a href="blog.html" class="block text-xl text-white font-medium">Blog</a>
+        <a href="contact.html" class="block text-xl text-slate-400">Contact</a>
+        <button id="close-menu-btn" class="absolute top-6 right-6 text-3xl text-white">
+            <i class="fa-solid fa-xmark"></i>
+        </button>
+    </div>
+
+    <main class="flex-grow pt-32 pb-16 px-6 md:px-12 max-w-4xl mx-auto w-full">
+        <article>
+            <div class="mb-8">
+                <a href="blog.html" class="text-brand-purple text-sm hover:underline mb-4 inline-block">&larr; Back to Blog</a>
+                <h1 class="text-3xl md:text-5xl font-bold text-white mb-4">Scaling Web Applications in 2023</h1>
+                <div class="flex items-center gap-4 text-slate-400 text-sm">
+                    <span><i class="fa-regular fa-calendar mr-2"></i> Oct 15, 2023</span>
+                    <span><i class="fa-regular fa-user mr-2"></i> Rbmighty Chukwuemeka</span>
+                </div>
+            </div>
+
+            <div class="w-full aspect-video rounded-2xl overflow-hidden mb-10">
+                <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" class="w-full h-full object-cover">
+            </div>
+
+            <div class="prose prose-invert prose-lg max-w-none text-slate-300">
+                <p>As user bases grow, the architecture of your application becomes critical. A monolithic approach might work for an MVP, but scaling requires a different mindset. In this post, we explore modern strategies for handling high traffic.</p>
+                <h3 class="text-white mt-8 mb-4 font-bold text-2xl">1. Database Optimization</h3>
+                <p>The bottleneck often lies in the database. Implement indexing, read replicas, and caching layers (like Redis) to reduce load times and handle concurrent requests efficiently.</p>
+                <h3 class="text-white mt-8 mb-4 font-bold text-2xl">2. Microservices Architecture</h3>
+                <p>Breaking down a monolith into microservices allows teams to deploy independently and scale specific parts of the application that are under heavy load, rather than duplicating the entire stack.</p>
+                <h3 class="text-white mt-8 mb-4 font-bold text-2xl">3. Load Balancing</h3>
+                <p>Distributing network traffic across multiple servers ensures no single server bears too much demand. This improves responsiveness and increases availability of applications.</p>
+            </div>
+        </article>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
